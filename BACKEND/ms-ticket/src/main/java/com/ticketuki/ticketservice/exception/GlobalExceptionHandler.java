@@ -1,0 +1,80 @@
+package com.ticketuki.ticketservice.exception;
+
+import jakarta.servlet.http.HttpServletRequest;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.FieldError;
+import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.reactive.function.client.WebClientRequestException;
+import org.springframework.web.server.ResponseStatusException;
+import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.Map;
+
+@ControllerAdvice
+@Slf4j
+public class GlobalExceptionHandler {
+
+    @ExceptionHandler(TicketNotFoundException.class)
+    public ResponseEntity<ErrorResponse> handleTicketNotFound(TicketNotFoundException ex, HttpServletRequest request) {
+        log.warn("Ticket no encontrado: {}", ex.getMessage());
+        return buildResponse(HttpStatus.NOT_FOUND, ex.getMessage(), request, null);
+    }
+
+    @ExceptionHandler(TicketOperacionInvalidaException.class)
+    public ResponseEntity<ErrorResponse> handleOperacionInvalida(TicketOperacionInvalidaException ex, HttpServletRequest request) {
+        log.warn("Operación inválida sobre ticket: {}", ex.getMessage());
+        return buildResponse(HttpStatus.UNPROCESSABLE_ENTITY, ex.getMessage(), request, null);
+    }
+
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity<ErrorResponse> handleValidation(MethodArgumentNotValidException ex, HttpServletRequest request) {
+        log.warn("Error de validación: {}", ex.getMessage());
+        Map<String, String> errors = new HashMap<>();
+        ex.getBindingResult().getAllErrors().forEach(error -> {
+            String fieldName = ((FieldError) error).getField();
+            errors.put(fieldName, error.getDefaultMessage());
+        });
+        return buildResponse(HttpStatus.BAD_REQUEST, "Validación fallida", request, errors);
+    }
+
+    @ExceptionHandler(DataIntegrityViolationException.class)
+    public ResponseEntity<ErrorResponse> handleDataIntegrity(DataIntegrityViolationException ex, HttpServletRequest request) {
+        log.warn("Violación de integridad de datos: {}", ex.getMessage());
+        return buildResponse(HttpStatus.CONFLICT, "Datos duplicados o en conflicto", request, null);
+    }
+
+    @ExceptionHandler(ResponseStatusException.class)
+    public ResponseEntity<ErrorResponse> handleResponseStatus(ResponseStatusException ex, HttpServletRequest request) {
+        log.warn("Error de estado: {}", ex.getMessage());
+        return buildResponse(HttpStatus.valueOf(ex.getStatusCode().value()), ex.getReason(), request, null);
+    }
+
+    @ExceptionHandler(WebClientRequestException.class)
+    public ResponseEntity<ErrorResponse> handleWebClientRequest(WebClientRequestException ex, HttpServletRequest request) {
+        log.error("Error de conexión con microservicio externo: {}", ex.getMessage());
+        return buildResponse(HttpStatus.SERVICE_UNAVAILABLE,
+                "No se pudo conectar con un servicio requerido. Intente nuevamente.", request, null);
+    }
+
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<ErrorResponse> handleGeneric(Exception ex, HttpServletRequest request) {
+        log.error("Error interno no manejado: ", ex);
+        return buildResponse(HttpStatus.INTERNAL_SERVER_ERROR, "Error interno del servidor", request, null);
+    }
+
+    private ResponseEntity<ErrorResponse> buildResponse(HttpStatus status, String message, HttpServletRequest request, Map<String, String> errors) {
+        ErrorResponse response = ErrorResponse.builder()
+                .timestamp(LocalDateTime.now())
+                .status(status.value())
+                .message(message)
+                .path(request.getRequestURI())
+                .errors(errors)
+                .build();
+        return new ResponseEntity<>(response, status);
+    }
+}
