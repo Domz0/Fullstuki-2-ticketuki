@@ -6,196 +6,349 @@
     <title>Pago</title>
   </head>
   <body style="background-color: rgb(244, 244, 245)">
-    <table>
-      <tr>
+    <center>
+      <table>
         <td>
-          <table
-            cellspacing="10"
-            style="
-              background-color: rgb(255, 255, 255);
-              border-radius: 5px;
-              border: 1px solid rgb(232, 232, 235);
-            "
-          >
-            <caption style="text-align: left">
-              <b>Datos del Usuario/a</b>
-            </caption>
+          <table cellspacing="10">
             <tr>
               <td>
-                Nombre:
-                <input type="text" nombre="nombre" />
-              </td>
-              <td>
-                Nombre:
-                <input type="text" apellido="apellido" />
+                <div
+                  style="
+                    background-color: rgb(255, 255, 255);
+                    border-radius: 5px;
+                    border: 1px solid rgb(232, 232, 235);
+                    padding: 10px;
+                  "
+                >
+                  <table cellspacing="10">
+                    <caption style="text-align: left">
+                      <b>Datos del Usuario/a</b>
+                    </caption>
+                    <tr>
+                      <td>
+                        <input
+                          type="text"
+                          name="nombre"
+                          placeholder="Nombre"
+                          style="
+                            width: 260px;
+                            border-radius: 5px;
+                            border: 1px solid rgb(232, 232, 235);
+                            padding: 5px;
+                          "
+                        />
+                      </td>
+
+                      <td>
+                        <input
+                          type="text"
+                          name="apellido"
+                          placeholder="Apellido"
+                          style="
+                            width: 260px;
+                            border-radius: 5px;
+                            border: 1px solid rgb(232, 232, 235);
+                            padding: 5px;
+                          "
+                        />
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <input
+                          type="text"
+                          name="direccion"
+                          placeholder="Dirección"
+                          style="
+                            width: 260px;
+                            border-radius: 5px;
+                            border: 1px solid rgb(232, 232, 235);
+                            padding: 5px;
+                          "
+                        />
+                      </td>
+
+                      <td>
+                        <input
+                          type="email"
+                          name="correo"
+                          placeholder="Correo electrónico"
+                          style="
+                            width: 260px;
+                            border-radius: 5px;
+                            border: 1px solid rgb(232, 232, 235);
+                            padding: 5px;
+                          "
+                        />
+                      </td>
+                    </tr>
+                  </table>
+                </div>
               </td>
             </tr>
+
             <tr>
               <td>
-                Direccion:
-                <input type="text" direccion="nombre" />
+                <div
+                  style="
+                    background-color: rgb(255, 255, 255);
+                    border-radius: 5px;
+                    border: 1px solid rgb(232, 232, 235);
+                    padding: 10px;
+                  "
+                >
+                  <table cellspacing="10">
+                    <caption style="text-align: left">
+                      <b>Convenio Corporativo</b>
+                    </caption>
+                    <tr>
+                      <td>
+                        <input
+                          type="text"
+                          name="correo"
+                          placeholder="Codigo"
+                          style="
+                            width: 260px;
+                            border-radius: 5px;
+                            border: 1px solid rgb(232, 232, 235);
+                            padding: 5px;
+                          "
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>aqui debe ir algun texto</td>
+                    </tr>
+                  </table>
+                </div>
               </td>
+            </tr>
+
+            <tr>
               <td>
-                no se q otra:
-                <input type="text" temporal="temporal" />
+                <div
+                  style="
+                    border-radius: 5px;
+                    border: 1px solid rgb(232, 232, 235);
+                    background-color: rgb(255, 255, 255);
+                    padding: 10px;
+                  "
+                >
+                  <b>Metodo de pago</b>
+                  <br />
+                  <table>
+                    <tr>
+                      <td>
+                        <div
+                          style="
+                            width: 260px;
+                            border-radius: 5px;
+                            border: 1px solid rgb(232, 232, 235);
+                            padding: 5px;
+                          "
+                        >
+                          <table style="width: 100%">
+                            <tr>
+                              <td>Débito / Crédito</td>
+
+                              <td style="text-align: right">
+                                <input
+                                  type="radio"
+                                  name="metodo_pago"
+                                  value="debcredito"
+                                />
+                              </td>
+                            </tr>
+                          </table>
+                        </div>
+                      </td>
+
+                      <td>
+                        <div
+                          style="
+                            width: 260px;
+                            border-radius: 5px;
+                            border: 1px solid rgb(232, 232, 235);
+                            padding: 5px;
+                          "
+                        >
+                          <table style="width: 100%">
+                            <tr>
+                              <td>Mercado pago</td>
+
+                              <td style="text-align: right">
+                                <input
+                                  type="radio"
+                                  name="metodo_pago"
+                                  value="mpago"
+                                />
+                              </td>
+                            </tr>
+                          </table>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div
+                          style="
+                            width: 260px;
+                            border-radius: 5px;
+                            border: 1px solid rgb(232, 232, 235);
+                            padding: 5px;
+                          "
+                        >
+                          <table style="width: 100%">
+                            <tr>
+                              <td>PayPal</td>
+
+                              <td style="text-align: right">
+                                <input
+                                  type="radio"
+                                  name="metodo_pago"
+                                  value="paypal"
+                                />
+                              </td>
+                            </tr>
+                          </table>
+                        </div>
+                      </td>
+
+                      <td>
+                        <div
+                          style="
+                            width: 260px;
+                            border-radius: 5px;
+                            border: 1px solid rgb(232, 232, 235);
+                            padding: 5px;
+                          "
+                        >
+                          <table style="width: 100%">
+                            <tr>
+                              <td>Apple Pay / Google Pay</td>
+
+                              <td style="text-align: right">
+                                <input
+                                  type="radio"
+                                  name="metodo_pago"
+                                  value="AGpay"
+                                />
+                              </td>
+                            </tr>
+                          </table>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div
+                          style="
+                            width: 260px;
+                            border-radius: 5px;
+                            border: 1px solid rgb(232, 232, 235);
+                            padding: 5px;
+                          "
+                        >
+                          <table style="width: 100%">
+                            <tr>
+                              <td>Yape / Plin</td>
+
+                              <td style="text-align: right">
+                                <input
+                                  type="radio"
+                                  name="metodo_pago"
+                                  value="yape"
+                                />
+                              </td>
+                            </tr>
+                          </table>
+                        </div>
+                      </td>
+
+                      <td>
+                        <div
+                          style="
+                            width: 260px;
+                            border-radius: 5px;
+                            border: 1px solid rgb(232, 232, 235);
+                            padding: 5px;
+                          "
+                        >
+                          <table style="width: 100%">
+                            <tr>
+                              <td>Transferencia Bancaria</td>
+
+                              <td style="text-align: right">
+                                <input
+                                  type="radio"
+                                  name="metodo_pago"
+                                  value="transferencia"
+                                />
+                              </td>
+                            </tr>
+                          </table>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                  <br />
+                  aqui faltan las cajas de datos
+                  <br />
+                </div>
               </td>
             </tr>
           </table>
         </td>
-        <td><div style="border: 1px solid black">resumen de la compra</div></td>
-      </tr>
-
-      <tr>
-        <td>
+        <td valign="top">
           <div
             style="
               background-color: rgb(255, 255, 255);
               border-radius: 5px;
               border: 1px solid rgb(232, 232, 235);
-            "
-          >
-            <table cellspacing="10">
-              <caption style="text-align: left">
-                <b>CONVENIO CORPORATIVO</b>
-              </caption>
-              <tr>
-                <td>
-                  Codigo:
-                  <input type="text" codigo="codigo" />
-                </td>
-              </tr>
-              <tr>
-                <td>aqui debe ir algun texto</td>
-              </tr>
-            </table>
-          </div>
-        </td>
-        <td>_</td>
-      </tr>
-
-      <tr>
-        <td>
-          <div
-            style="
-              border-radius: 5px;
-              border: 1px solid rgb(232, 232, 235);
-              background-color: rgb(255, 255, 255);
               padding: 10px;
             "
           >
-            Metodo de pago
-            <br />
-            <table>
+            <table cellspacing="10">
+              <caption>
+                <b>Resumen de compra</b>
+              </caption>
               <tr>
                 <td>
                   <div
-                    style="
-                      border-radius: 5px;
-                      border: 1px solid rgb(232, 232, 235);
-                    "
+                    style="width: 60px; height: 60px; border: 1px solid black"
                   >
-                    Débito / Crédito<input
-                      type="radio"
-                      name="metodo_pago"
-                      value="debcredito"
-                    />
+                    imagen evento
                   </div>
                 </td>
-                <td>
-                  <div
-                    style="
-                      border-radius: 5px;
-                      border: 1px solid rgb(232, 232, 235);
-                    "
-                  >
-                    Mercado pago
-                    <input type="radio" name="metodo_pago" value="mpago" />
-                  </div>
+                <td style="text-align: left">
+                  <b>Festival de rock en vivo</b><br />
+                  <small>25/09/2027 - 22:30 hrs</small>
                 </td>
               </tr>
               <tr>
-                <td>
-                  <div
-                    style="
-                      border-radius: 5px;
-                      border: 1px solid rgb(232, 232, 235);
-                    "
-                  >
-                    PayPal<input
-                      type="radio"
-                      name="metodo_pago"
-                      value="paypal"
-                    />
-                  </div>
-                </td>
-                <td>
-                  <div
-                    style="
-                      border-radius: 5px;
-                      border: 1px solid rgb(232, 232, 235);
-                    "
-                  >
-                    Apple Pay / Google Pay
-                    <input type="radio" name="metodo_pago" value="AGpay" />
-                  </div>
-                </td>
+                <td>Ubicacion</td>
+                <td style="text-align: right">Cancha General</td>
               </tr>
               <tr>
-                <td>
-                  <div
-                    style="
-                      border-radius: 5px;
-                      border: 1px solid rgb(232, 232, 235);
-                    "
-                  >
-                    Yape / Plin<input
-                      type="radio"
-                      name="metodo_pago"
-                      value="yape"
-                    />
-                  </div>
-                </td>
-                <td>
-                  <div
-                    style="
-                      border-radius: 5px;
-                      border: 1px solid rgb(232, 232, 235);
-                    "
-                  >
-                    Transferencia Bancaria
-                    <input
-                      type="radio"
-                      name="metodo_pago"
-                      value="transferencia"
-                    />
-                  </div>
-                </td>
+                <td>2 x entradas</td>
+                <td style="text-align: right">$90.000</td>
               </tr>
               <tr>
-                <td>
-                  <div
-                    style="
-                      border-radius: 5px;
-                      border: 1px solid rgb(232, 232, 235);
-                    "
-                  >
-                    Cuotas sin interes<input
-                      type="radio"
-                      name="metodo_pago"
-                      value="cuotas"
-                    />
-                  </div>
-                </td>
-                <td></td>
+                <td>extra</td>
+                <td style="text-align: right">$9.000</td>
+              </tr>
+              <tr>
+                <td>Total</td>
+                <td style="text-align: right">$99.000</td>
+              </tr>
+              <tr>
+                <td><button type="button">comprar</button></td>
               </tr>
             </table>
-            <br />
-            aqui faltan las cajas de datos
-            <br />
           </div>
         </td>
-        <td>_</td>
-      </tr>
-    </table>
+      </table>
+    </center>
   </body>
 </html>
