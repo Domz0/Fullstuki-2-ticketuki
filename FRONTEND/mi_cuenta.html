@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mi cuenta</title>
   </head>
-  <body>
-    <h5>MI CUENTA - DATOS PERSONALES</h5>
+  <body style="background-color: rgb(244, 244, 245)">
     <table>
       <tr>
         <td>
@@ -25,13 +24,14 @@
 
     <table cellspacing="10">
       <tr>
-        <td></td>
-        <td>Datos del Usuario/a</td>
-      </tr>
-      <tr>
         <td valign="top">
           <div
-            style="border: 1px solid black; border-radius: 5px; padding: 16px"
+            style="
+              background-color: rgb(255, 255, 255);
+              border: 1px solid rgb(232, 232, 235);
+              border-radius: 5px;
+              padding: 16px;
+            "
           >
             <a href="historial.html">Historial</a><br />
             <a href="tickets.html">Mis tickets</a><br />
@@ -39,90 +39,96 @@
           </div>
         </td>
         <td valign="top">
-          <div
-            style="border: 1px solid black; border-radius: 5px; padding: 16px"
+          <table
+            cellspacing="10"
+            style="
+              background-color: rgb(255, 255, 255);
+              border-radius: 5px;
+              border: 1px solid rgb(232, 232, 235);
+            "
           >
-            <table>
-              <tr>
-                <td>
-                  <fieldset
-                    style="
-                      width: 250px;
-                      border: 1px transparent black;
-                      border-radius: 5px;
-                    "
-                  >
-                    <legend>Nombre</legend>
-                    Camila
-                  </fieldset>
-                </td>
-                <td>
-                  <fieldset
-                    style="
-                      width: 250px;
-                      border: 1px transparent black;
-                      border-radius: 5px;
-                    "
-                  >
-                    <legend>Apellido</legend>
-                    Vergara
-                  </fieldset>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <fieldset
-                    style="
-                      width: 250px;
-                      border: 1px transparent black;
-                      border-radius: 5px;
-                    "
-                  >
-                    <legend>Run</legend>
-                    12345678-9
-                  </fieldset>
-                </td>
-                <td>
-                  <fieldset
-                    style="
-                      width: 250px;
-                      border: 1px transparent black;
-                      border-radius: 5px;
-                    "
-                  >
-                    <legend>Fecha de Nacimiento</legend>
-                    01/04/1998
-                  </fieldset>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <fieldset
-                    style="
-                      width: 250px;
-                      border: 1px transparent black;
-                      border-radius: 5px;
-                    "
-                  >
-                    <legend>Correo electronico</legend>
-                    correo@correo.cl
-                  </fieldset>
-                </td>
-                <td>
-                  <fieldset
-                    style="
-                      width: 250px;
-                      border: 1px transparent black;
-                      border-radius: 5px;
-                    "
-                  >
-                    <legend>Numero de contacto</legend>
-                    +56912345678
-                  </fieldset>
-                </td>
-              </tr>
-            </table>
-          </div>
+            <caption style="text-align: left">
+              <b>Datos del Usuario/a</b>
+            </caption>
+            <tr>
+              <td>
+                <fieldset
+                  style="
+                    width: 250px;
+                    border: 1px transparent black;
+                    border-radius: 5px;
+                  "
+                >
+                  <legend>Nombre</legend>
+                  Camila
+                </fieldset>
+              </td>
+              <td>
+                <fieldset
+                  style="
+                    width: 250px;
+                    border: 1px transparent black;
+                    border-radius: 5px;
+                  "
+                >
+                  <legend>Apellido</legend>
+                  Vergara
+                </fieldset>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <fieldset
+                  style="
+                    width: 250px;
+                    border: 1px transparent black;
+                    border-radius: 5px;
+                  "
+                >
+                  <legend>Run</legend>
+                  12345678-9
+                </fieldset>
+              </td>
+              <td>
+                <fieldset
+                  style="
+                    width: 250px;
+                    border: 1px transparent black;
+                    border-radius: 5px;
+                  "
+                >
+                  <legend>Fecha de Nacimiento</legend>
+                  01/04/1998
+                </fieldset>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <fieldset
+                  style="
+                    width: 250px;
+                    border: 1px transparent black;
+                    border-radius: 5px;
+                  "
+                >
+                  <legend>Correo electronico</legend>
+                  correo@correo.cl
+                </fieldset>
+              </td>
+              <td>
+                <fieldset
+                  style="
+                    width: 250px;
+                    border: 1px transparent black;
+                    border-radius: 5px;
+                  "
+                >
+                  <legend>Numero de contacto</legend>
+                  +56912345678
+                </fieldset>
+              </td>
+            </tr>
+          </table>
         </td>
       </tr>
     </table>
