@@ -92,16 +92,123 @@
 
       <tr>
         <td>
-          <div style="border: 1px solid black">
+          <div
+            style="
+              border-radius: 5px;
+              border: 1px solid rgb(232, 232, 235);
+              background-color: rgb(255, 255, 255);
+              padding: 10px;
+            "
+          >
             Metodo de pago
-            <input type="radio" name="metodo_pago" value="debito" />
-            Débito
             <br />
-            <input type="radio" name="metodo_pago" value="credito" />
-            Crédito
+            <table>
+              <tr>
+                <td>
+                  <div
+                    style="
+                      border-radius: 5px;
+                      border: 1px solid rgb(232, 232, 235);
+                    "
+                  >
+                    Débito / Crédito<input
+                      type="radio"
+                      name="metodo_pago"
+                      value="debcredito"
+                    />
+                  </div>
+                </td>
+                <td>
+                  <div
+                    style="
+                      border-radius: 5px;
+                      border: 1px solid rgb(232, 232, 235);
+                    "
+                  >
+                    Mercado pago
+                    <input type="radio" name="metodo_pago" value="mpago" />
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div
+                    style="
+                      border-radius: 5px;
+                      border: 1px solid rgb(232, 232, 235);
+                    "
+                  >
+                    PayPal<input
+                      type="radio"
+                      name="metodo_pago"
+                      value="paypal"
+                    />
+                  </div>
+                </td>
+                <td>
+                  <div
+                    style="
+                      border-radius: 5px;
+                      border: 1px solid rgb(232, 232, 235);
+                    "
+                  >
+                    Apple Pay / Google Pay
+                    <input type="radio" name="metodo_pago" value="AGpay" />
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div
+                    style="
+                      border-radius: 5px;
+                      border: 1px solid rgb(232, 232, 235);
+                    "
+                  >
+                    Yape / Plin<input
+                      type="radio"
+                      name="metodo_pago"
+                      value="yape"
+                    />
+                  </div>
+                </td>
+                <td>
+                  <div
+                    style="
+                      border-radius: 5px;
+                      border: 1px solid rgb(232, 232, 235);
+                    "
+                  >
+                    Transferencia Bancaria
+                    <input
+                      type="radio"
+                      name="metodo_pago"
+                      value="transferencia"
+                    />
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div
+                    style="
+                      border-radius: 5px;
+                      border: 1px solid rgb(232, 232, 235);
+                    "
+                  >
+                    Cuotas sin interes<input
+                      type="radio"
+                      name="metodo_pago"
+                      value="cuotas"
+                    />
+                  </div>
+                </td>
+                <td></td>
+              </tr>
+            </table>
             <br />
-            <input type="radio" name="metodo_pago" value="transferencia" />
-            Transferencia
+            aqui faltan las cajas de datos
+            <br />
           </div>
         </td>
         <td>_</td>
